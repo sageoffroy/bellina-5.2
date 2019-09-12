@@ -10,3 +10,8 @@ $red: #F00 !default;
 
 
 @import "bootstrap";
+
+
+table {
+	@extend .table;
+}

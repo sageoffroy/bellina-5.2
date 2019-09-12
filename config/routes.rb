@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sizes
+  resources :seasons
   resources :colors
   resources :footwears
   resources :categories
