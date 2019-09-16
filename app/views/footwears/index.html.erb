@@ -22,7 +22,7 @@
       <th>Size</th>
       <th>Weight</th>
       <th>Season</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -46,9 +46,7 @@
         <td><%= footwear.size %></td>
         <td><%= footwear.weight %></td>
         <td><%= footwear.season %></td>
-        <td><%= link_to 'Show', footwear %></td>
-        <td><%= link_to 'Edit', edit_footwear_path(footwear) %></td>
-        <td><%= link_to 'Destroy', footwear, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', footwear %><%= link_to 'Edit', edit_footwear_path(footwear) %><%= link_to 'Destroy', footwear, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

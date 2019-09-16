@@ -47,6 +47,6 @@ daysInMonth = function(humanMonth, year) {
   return new Date(year || (new Date).getFullYear(), humanMonth, 0).getDate();
 };
 
-$(document).ready(function() {
-  $("#dataTable").dataTable();
-});
+/*$(document).ready(function() {
+  $("table").dataTable();
+});*/
