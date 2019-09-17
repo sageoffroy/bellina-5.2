@@ -5,7 +5,7 @@
           <li class="breadcrumb-item">
             <a href="#">Tablero</a>
           </li>
-          <li class="breadcrumb-item active">Inicio</li>
+          
         </ol>
 
         <!-- Icon Cards-->
@@ -16,7 +16,7 @@
                 <div class="card-body-icon">
                   <i class="fa fa-fw fa-list"></i>
                 </div>
-                <div class="mr-5"><%= @footwears %> Calzados cargados</div>
+                <div class="mr-5"><%= @footwears %> Calzados</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="/footwears">
                 <span class="float-left">Ver Calzados</span>
@@ -32,9 +32,9 @@
                 <div class="card-body-icon">
                   <i class="fa fa-fw fa-list"></i>
                 </div>
-                <div class="mr-5">XX Proveedores</div>
+                <div class="mr-5"><%= @providers %> Proveedores</div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
+              <a class="card-footer text-white clearfix small z-1" href="/providers">
                 <span class="float-left">Ver Proveedores</span>
                 <span class="float-right">
                   <i class="fa fa-angle-right"></i>
@@ -629,3 +629,4 @@
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
+      </div>
