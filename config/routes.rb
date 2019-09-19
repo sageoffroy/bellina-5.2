@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :sizes
+  resources :categories
   resources :seasons
   resources :colors
   resources :footwears
-  resources :categories
   resources :trademarks
   resources :providers
   get 'welcome/index'

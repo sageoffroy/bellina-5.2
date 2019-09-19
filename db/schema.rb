@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_155615) do
+ActiveRecord::Schema.define(version: 2019_09_19_142202) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.string "hex_code"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_155615) do
   end
 
   create_table "sizes", force: :cascade do |t|
-    t.decimal "number"
+    t.integer "number"
     t.decimal "us"
     t.decimal "cms"
     t.datetime "created_at", null: false

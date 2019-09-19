@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  hex_code: MyString
+  description: MyString
 
 two:
   name: MyString
-  hex_code: MyString
+  description: MyString

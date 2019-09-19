@@ -14,7 +14,7 @@ class CategoriesTest < ApplicationSystemTestCase
     visit categories_url
     click_on "New Category"
 
-    fill_in "Hex code", with: @category.hex_code
+    fill_in "Description", with: @category.description
     fill_in "Name", with: @category.name
     click_on "Create Category"
 
@@ -26,7 +26,7 @@ class CategoriesTest < ApplicationSystemTestCase
     visit categories_url
     click_on "Edit", match: :first
 
-    fill_in "Hex code", with: @category.hex_code
+    fill_in "Description", with: @category.description
     fill_in "Name", with: @category.name
     click_on "Update Category"
 
