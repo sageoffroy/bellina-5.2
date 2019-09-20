@@ -24,7 +24,7 @@
         <tbody>
           <% @sizes.each do |size| %>
             <tr>
-              <td><%= size.number %></td>
+              <td><%= size %></td>
               <td>
                 <%= link_to((fa_icon "eye"), size) %>
                 <%= link_to((fa_icon "pencil"), edit_size_path(size)) %>
