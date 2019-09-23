@@ -12,18 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :placeholder => "Nombre" %>
   </div>
 
   <div class="field">
-    <%= form.label :hex_code %>
-    <%= form.text_field :hex_code %>
-  </div>
-
-  <div class="field">
-    <%= form.label :provider_id %>
-    <%= form.text_field :provider_id %>
+    <%= form.collection_select :provider_id, Provider.all, :id, :to_s, {prompt: "Seleccionar Proveedor"}, {class: "select2 select-field"} %>
   </div>
 
   <div class="actions">

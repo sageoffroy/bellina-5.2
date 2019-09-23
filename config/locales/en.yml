@@ -33,6 +33,8 @@ en:
   activerecord:
     models:
       provider:  "Proveedor"
+      category:  "Categoría"
+      trademark:  "Marca"
        
         
     attributes:
@@ -41,7 +43,23 @@ en:
         cuil: "Cuil"
         telephone: "Teléfono"
         email: "E-mail"
-        
+
+      category:
+        name: "Nombre"
+        description: "Descripción"
+      
+      trademark:
+        name: "Nombre"
+        hex_code: "Código Hexadecimal"
+        provider_id: "Proveedor"
+
+      footwear:
+        trademark_id: "Marca"
+        category_id: "Categoría"
+        stock: "Inventario Actual"
+        stock_warning: "Inventario Mínimo"
+        wholesale_price: "Precio Mayorista"
+        retail_price: "Precio Minorista"
 
   date:
     abbr_day_names:
@@ -188,10 +206,10 @@ en:
         create: Crear Proveedor
         submit: Guardar Proveedor
         update: Actualizar Proveedor
-      dependence_of_agent:
-        create: Crear Dependencia de Agente
-        submit: Guardar Dependencia de Agente
-        update: Actualizar Dependencia Agente
+      trademark:
+        create: Crear Marca
+        submit: Guardar Marca
+        update: Actualizar Marca
       report:
         create: Crear Reporte
         submit: Guardar Reporte

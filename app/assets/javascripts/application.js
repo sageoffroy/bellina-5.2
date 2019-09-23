@@ -15,7 +15,9 @@
 //= require turbolinks
 //= require jquery3
 //= require popper
+//= require bootstrap-datepicker
 //= require datatables
+//= require select2
 //= require toastr
 //= require Chart.min
 

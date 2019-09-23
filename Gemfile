@@ -65,12 +65,11 @@ end
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
 
-
-
+#Select
+gem "select2-rails"
 
 #DatePicker
 gem 'bootstrap-datepicker-rails'
-
 
 #Datatable
 gem 'jquery-datatables'
