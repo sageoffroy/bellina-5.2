@@ -1,89 +1,114 @@
-<p id="notice"><%= notice %></p>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/">Tablero</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="<%=providers_path%>">Calzados</a>
+  </li>
+  <li class="breadcrumb-item active"><%= @footwear.sku %></li>
+</ol>
 
-<p>
-  <strong>Sku:</strong>
-  <%= @footwear.sku %>
-</p>
+<div class="container">
+  <div class="card card-register mx-auto mt-5">
+    <div class="card-header"><%= @footwear.sku %></div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT47Iy_5Ta74Q-2vZ4YhSNbSUYDAFtCsP6ABoHkZBaU3kG9RBOA" class="img-fluid img-thumbnail" alt="San Fran" style="width:204px;height:auto;">
+        </div>
+        <div class="col-md-8">
+          <p>
+            <strong>Marca (proveedor):</strong>
+            <%= @footwear.trademark%>
+          </p>
+          <p>
+            <strong>Categoría:</strong>
+            <%= @footwear.category %>
+          </p>
+          <p>
+            <strong>Color:</strong>
+            <%= @footwear.color %>
+          </p>
+          <p>
+            <strong>Stock:</strong>
+            <%= @footwear.stock %>
+          </p>
+          <p>
+            <strong>Stock warning:</strong>
+            <%= @footwear.stock_warning %>
+          </p>
+          
+        </div>
 
-<p>
-  <strong>Trademark:</strong>
-  <%= @footwear.trademark %>
-</p>
+        <div class="col-md-12">
+          
 
-<p>
-  <strong>Category:</strong>
-  <%= @footwear.category %>
-</p>
+          
 
-<p>
-  <strong>Color:</strong>
-  <%= @footwear.color %>
-</p>
+          
 
-<p>
-  <strong>Stock:</strong>
-  <%= @footwear.stock %>
-</p>
+          <p>
+            <strong>Wholesale price:</strong>
+            <%= @footwear.wholesale_price %>
+          </p>
 
-<p>
-  <strong>Stock warning:</strong>
-  <%= @footwear.stock_warning %>
-</p>
+          <p>
+            <strong>Retail price:</strong>
+            <%= @footwear.retail_price %>
+          </p>
 
-<p>
-  <strong>Wholesale price:</strong>
-  <%= @footwear.wholesale_price %>
-</p>
+          <p>
+            <strong>Active:</strong>
+            <%= @footwear.active %>
+          </p>
 
-<p>
-  <strong>Retail price:</strong>
-  <%= @footwear.retail_price %>
-</p>
+          <p>
+            <strong>Short description:</strong>
+            <%= @footwear.short_description %>
+          </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @footwear.active %>
-</p>
+          <p>
+            <strong>Long description:</strong>
+            <%= @footwear.long_description %>
+          </p>
 
-<p>
-  <strong>Short description:</strong>
-  <%= @footwear.short_description %>
-</p>
+          <p>
+            <strong>Footwear picture uri:</strong>
+            <%= @footwear.footwear_picture_uri %>
+          </p>
 
-<p>
-  <strong>Long description:</strong>
-  <%= @footwear.long_description %>
-</p>
+          <p>
+            <strong>Release date:</strong>
+            <%= @footwear.release_date %>
+          </p>
 
-<p>
-  <strong>Footwear picture uri:</strong>
-  <%= @footwear.footwear_picture_uri %>
-</p>
+          <p>
+            <strong>Release country:</strong>
+            <%= @footwear.release_country %>
+          </p>
 
-<p>
-  <strong>Release date:</strong>
-  <%= @footwear.release_date %>
-</p>
+          <p>
+            <strong>Size:</strong>
+            <%= @footwear.size %>
+          </p>
 
-<p>
-  <strong>Release country:</strong>
-  <%= @footwear.release_country %>
-</p>
+          <p>
+            <strong>Weight:</strong>
+            <%= @footwear.weight %>
+          </p>
 
-<p>
-  <strong>Size:</strong>
-  <%= @footwear.size %>
-</p>
+          <p>
+            <strong>Season:</strong>
+            <%= @footwear.season %>
+          </p>
+        </div>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @footwear.weight %>
-</p>
-
-<p>
-  <strong>Season:</strong>
-  <%= @footwear.season %>
-</p>
-
-<%= link_to 'Edit', edit_footwear_path(@footwear) %> |
-<%= link_to 'Back', footwears_path %>
+      
+      </div>
+        <div class="text-center">
+          <%= link_to 'Editar', edit_footwear_path(@footwear), class: "btn btn-primary" %>
+          <%= link_to 'Volver', footwears_path, class: "btn btn-primary" %>
+        </div>
+    </div>
+  </div>
+</div>

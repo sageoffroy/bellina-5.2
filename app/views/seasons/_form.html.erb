@@ -1,14 +1,10 @@
 <%= form_with(model: season, local: true) do |form| %>
   <% if season.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(season.errors.count, "error") %> prohibited this season from being saved:</h2>
-
-      <ul>
+    <script type="text/javascript">
       <% season.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        toastr['error']('<%= message %>');
       <% end %>
-      </ul>
-    </div>
+    </script>
   <% end %>
 
   <div class="field">

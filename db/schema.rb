@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_142202) do
+ActiveRecord::Schema.define(version: 2019_09_26_143859) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -63,6 +63,13 @@ ActiveRecord::Schema.define(version: 2019_09_19_142202) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "release_countries", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "seasons", force: :cascade do |t|
     t.string "name"
     t.string "note"
@@ -80,7 +87,6 @@ ActiveRecord::Schema.define(version: 2019_09_19_142202) do
 
   create_table "trademarks", force: :cascade do |t|
     t.string "name"
-    t.string "hex_code"
     t.integer "provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

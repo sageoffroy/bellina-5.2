@@ -1,4 +1,11 @@
 <%= form_with(model: provider, local: true) do |form| %>
+  <% if provider.errors.any? %>
+    <script type="text/javascript">
+      <% provider.errors.full_messages.each do |message| %>
+        toastr['error']('<%= message %>');
+      <% end %>
+    </script>
+  <% end %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>

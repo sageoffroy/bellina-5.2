@@ -25,7 +25,6 @@ class FootwearsController < ApplicationController
   # POST /footwears.json
   def create
     @footwear = Footwear.new(footwear_params)
-
     respond_to do |format|
       if @footwear.save
         format.html { redirect_to @footwear, notice: 'Footwear was successfully created.' }

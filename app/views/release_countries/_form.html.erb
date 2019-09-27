@@ -1,0 +1,23 @@
+<%= form_with(model: release_country, local: true) do |form| %>
+  <% if release_country.errors.any? %>
+    <script type="text/javascript">
+      <% release_country.errors.full_messages.each do |message| %>
+        toastr['error']('<%= message %>');
+      <% end %>
+    </script>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

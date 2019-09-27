@@ -35,6 +35,9 @@ en:
       provider:  "Proveedor"
       category:  "Categoría"
       trademark:  "Marca"
+      size:  "Talle"
+      season:  "Temporada"
+      footwear:  "Calzado"
        
         
     attributes:
@@ -55,11 +58,23 @@ en:
 
       footwear:
         trademark_id: "Marca"
+        trademark: "Marca"
         category_id: "Categoría"
-        stock: "Inventario Actual"
-        stock_warning: "Inventario Mínimo"
+        category: "Categoría"
+        stock: "Invent. Actual"
+        stock_warning: "Invent. Mínimo"
         wholesale_price: "Precio Mayorista"
         retail_price: "Precio Minorista"
+        size_id: "Talle"
+        size: "Talle"
+        season_id: "Temporada"
+        season: "Temporada"
+        release_country_id: "Pais de Origen"
+        release_country: "Pais de Origen"
+        release_date_id: "F. de Elaboración"
+        release_country: "Pais de Origen"
+        short_description: "Descripción Corta"
+        long_description: "Descripción Larga"
 
   date:
     abbr_day_names:
@@ -181,7 +196,7 @@ en:
       not_a_number: "%{attribute} no es un número"
       not_an_integer: "%{attribute} debe ser un entero"
       odd: "%{attribute} debe ser impar"
-      required: "%{attribute} debe existir"
+      required: "%{attribute} es obligatorio"
       taken: "%{attribute} ya está en uso"
       too_long:
         one: "%{attribute} es demasiado largo (1 carácter máximo)"
@@ -210,10 +225,10 @@ en:
         create: Crear Marca
         submit: Guardar Marca
         update: Actualizar Marca
-      report:
-        create: Crear Reporte
-        submit: Guardar Reporte
-        update: Actualizar Reporte
+      footwear:
+        create: Crear Calzado
+        submit: Guardar Calzado
+        update: Actualizar Calzado
       novelty:
         create: Crear Novedad
         submit: Guardar Novedad

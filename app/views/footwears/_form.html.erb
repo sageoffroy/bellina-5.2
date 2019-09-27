@@ -1,14 +1,10 @@
 <%= form_with(model: footwear, local: true, html: { class: "form-horizontal" }) do |form| %>
   <% if footwear.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(footwear.errors.count, "error") %> prohibited this footwear from being saved:</h2>
-
-      <ul>
+    <script type="text/javascript">
       <% footwear.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        toastr['error']('<%= message %>');
       <% end %>
-      </ul>
-    </div>
+    </script>
   <% end %>
 
   <div class="field row">
@@ -37,75 +33,69 @@
   </div>
 
   <div class="field row">
-    <%= form.label :release_date, :class => "col-sm-3 col-form-label", :style=>"padding-right: 0px;"  %>
-    <div class="col-sm-3">
-      <%= form.text_field :release_date, :class => "datepicker" %>
+    <%= form.label :size_id, :class => "col-sm-2 col-form-label" %>
+    <div class="col-sm-4">
+      <%= form.collection_select :size_id, Size.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2 select-field"} %>
     </div>
-    <%= form.label :release_country_id, :class => "col-sm-3 col-form-label", :style=>"padding-right: 0px;"  %>
-    <div class="col-sm-3">
-      <%= form.text_field :release_country_id %>
+    <%= form.label :season_id, :class => "col-sm-2 col-form-label" %>
+    <div class="col-sm-4">
+      <%= form.collection_select :season_id, Season.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2 select-field"} %>
+    </div>
+  </div>
+
+
+  <div class="field row">
+    <%= form.label :release_date_id, :class => "col-sm-2 col-form-label" %>
+    <div class="col-sm-4">
+      <%= form.text_field :release_date_id, :class => "datepicker" %>
+    </div>
+    <%= form.label :release_country_id, :class => "col-sm-2 col-form-label" %>
+    <div class="col-sm-4">
+      <%= form.collection_select :release_country_id, ReleaseCountry.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2 select-field"} %>
     </div>
   </div>
 
   <hr>
-
   <div class="field row">
-    <%= form.label :stock, :class => "col-sm-3 col-form-label" %>
-    <div class="col-sm-3">
+    <%= form.label :stock, :class => "col-sm-2 col-form-label" %>
+    <div class="col-sm-4">
       <%= form.number_field :stock, :placeholder => "0" %>
     </div>
-    <%= form.label :stock_warning, :class => "col-sm-3 col-form-label", :style=>"padding-right: 0px;" %>
-    <div class="col-sm-3">
+    <%= form.label :stock_warning, :class => "col-sm-2 col-form-label" %>
+    <div class="col-sm-4">
       <%= form.number_field :stock_warning, :placeholder => "0" %>
     </div>
   </div>
+  <div class="field row">
+    <%= form.label :wholesale_price, :class => "col-sm-2 col-form-label" %>
+    <div class="col-sm-4 input-icon">
+      <%= form.number_field :wholesale_price, :placeholder => "0.00" %>
+      <i>$</i>
+    </div>
+    <%= form.label :retail_price, :class => "col-sm-2 col-form-label" %>
+    <div class="col-sm-4 input-icon">
+      <%= form.number_field :retail_price, :placeholder => "0.00" %>
+      <i>$</i>
+    </div>
+  </div>
 
   <hr>
-
-  <div class="field row">
-    <%= form.label :wholesale_price, :class => "col-sm-3 col-form-label", :style=>"padding-right: 0px;" %>
-    <div class="col-sm-3">
-      <%= form.number_field :wholesale_price, :placeholder => "$ 0.00" %>
-    </div>
-    <%= form.label :retail_price, :class => "col-sm-3 col-form-label", :style=>"padding-right: 0px;" %>
-    <div class="col-sm-3">
-      <%= form.number_field :retail_price, :placeholder => "$ 0.00" %>
-    </div>
-  </div>
-
-
   
-
   <div class="field">
-    <%= form.label :size_id %>
-    <%= form.text_field :size_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :weight %>
-    <%= form.text_field :weight %>
-  </div>
-
-  <div class="field">
-    <%= form.label :season_id %>
-    <%= form.text_field :season_id %>
-  </div>
-
-  <div class="field">
-    <%= form.text_field :footwear_picture_uri %>
-  </div>
-
-  <div class="field">
+    <%= form.label :short_description %>
     <%= form.text_field :short_description %>
+    
   </div>
 
   <div class="field">
-    <%= form.text_field :long_description %>
+    <%= form.label :long_description %>
+    <%= form.text_area :long_description %>
   </div>
 
 
   <div class="field">
-    <%= form.check_box :active %>
+    <%= form.check_box :active, :checked=> "checked" %>
+    <span style="font-style: italic;font-size: 0.8rem;"> Si el producto no se encuentra disponible para la venta, seleccione esta casilla</span>
   </div>
 
   <div class="actions">
