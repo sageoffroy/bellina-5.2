@@ -9,8 +9,8 @@
 </ol>
 
 <div class="container">
-  <div class="card card-register mx-auto mt-5">
-    <div class="card-header"><%= @footwear.sku %></div>
+  <div class="card card-register mx-auto mt-5" style="max-width: 53rem;">
+    <div class="card-header active-<%=@footwear.active%>"><%= @footwear.sku %></div>
     <div class="card-body">
       <div class="row">
         <div class="col-md-4">
@@ -30,85 +30,82 @@
             <%= @footwear.color %>
           </p>
           <p>
-            <strong>Stock:</strong>
-            <%= @footwear.stock %>
-          </p>
-          <p>
-            <strong>Stock warning:</strong>
-            <%= @footwear.stock_warning %>
-          </p>
-          
-        </div>
-
-        <div class="col-md-12">
-          
-
-          
-
-          
-
-          <p>
-            <strong>Wholesale price:</strong>
-            <%= @footwear.wholesale_price %>
+            <strong>Talle:</strong>
+            <%= @footwear.size %>
           </p>
 
-          <p>
-            <strong>Retail price:</strong>
-            <%= @footwear.retail_price %>
-          </p>
-
-          <p>
-            <strong>Active:</strong>
-            <%= @footwear.active %>
-          </p>
-
-          <p>
-            <strong>Short description:</strong>
-            <%= @footwear.short_description %>
-          </p>
-
-          <p>
-            <strong>Long description:</strong>
-            <%= @footwear.long_description %>
-          </p>
-
-          <p>
-            <strong>Footwear picture uri:</strong>
-            <%= @footwear.footwear_picture_uri %>
-          </p>
-
-          <p>
-            <strong>Release date:</strong>
+           <p>
+            <strong>Fecha de creación:</strong>
             <%= @footwear.release_date %>
           </p>
 
           <p>
-            <strong>Release country:</strong>
+            <strong>País de origen:</strong>
             <%= @footwear.release_country %>
           </p>
-
-          <p>
-            <strong>Size:</strong>
-            <%= @footwear.size %>
-          </p>
-
-          <p>
-            <strong>Weight:</strong>
-            <%= @footwear.weight %>
-          </p>
-
-          <p>
-            <strong>Season:</strong>
-            <%= @footwear.season %>
-          </p>
+          
+          
         </div>
 
-      
+
+        <div class="col-md-12">
+          <br>  
+
+          <% if  @footwear.stock > @footwear.stock_warning %>
+            <div class="alert alert-success" role="alert">
+             Quedan <strong><%=@footwear.stock%></strong> ejemplares en el inventario.
+            </div>
+          <% else %>            
+            <div class="alert alert-danger" role="alert">
+              Quedan <strong><%=@footwear.stock%></strong> ejemplares en el inventario, debería solictar más.
+            </div>
+
+          <% end %>
+
+          <ul class="list-group">
+            <li class="list-group-item">
+              Precio de Lista
+              <span style="float:right;"><%= number_to_currency(@footwear.wholesale_price, :unit => "$") %></span>
+            </li>
+            <li class="list-group-item">
+              Precio Contado
+              <span style="float:right;">
+                <% if  @footwear.retail_price.nil? %>
+                  <%= number_to_currency(@footwear.wholesale_price * WayPay.first.c1 , :unit => "$") %>
+                <% else %>
+                  <%= number_to_currency(@footwear.retail_price, :unit => "$") %>
+                <% end %>
+              </span>
+            </li>
+
+            <li class="list-group-item">
+              Precio Tarjeta Visa/Mastercard (3 cuotas)
+              <span style="float:right;">
+              1 cuota de  <%= number_to_currency(@footwear.calculate_way_pay("Visa/Mastercard", 3) / 3 , :unit => "$")%>  (<%= number_to_currency(@footwear.calculate_way_pay("Visa/Mastercard", 3), :unit => "$") %>)
+              </span>
+            </li>
+
+            <li class="list-group-item">
+              Precio Tarjeta Visa/Mastercard (6 cuotas)
+              <span style="float:right;">
+                1 cuota de <%= number_to_currency(@footwear.calculate_way_pay("Visa/Mastercard", 6) / 6 , :unit => "$")%>  (<%= number_to_currency(@footwear.calculate_way_pay("Visa/Mastercard", 6), :unit => "$") %>)
+              </span>
+            </li>
+
+            <li class="list-group-item">
+              Precio Tarjeta Visa/Mastercard (12 cuotas)
+              <span style="float:right;">
+                1 cuota de <%= number_to_currency(@footwear.calculate_way_pay("Visa/Mastercard", 12) / 12 , :unit => "$")%>  (<%= number_to_currency(@footwear.calculate_way_pay("Visa/Mastercard", 12), :unit => "$") %>)
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
-        <div class="text-center">
-          <%= link_to 'Editar', edit_footwear_path(@footwear), class: "btn btn-primary" %>
-          <%= link_to 'Volver', footwears_path, class: "btn btn-primary" %>
-        </div>
+      <hr>
+      <div class="text-center">
+        <%= link_to 'Editar', edit_footwear_path(@footwear), class: "btn btn-primary" %>
+        <%= link_to 'Volver', footwears_path, class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 </div>

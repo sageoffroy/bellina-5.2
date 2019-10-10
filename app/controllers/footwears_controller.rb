@@ -27,7 +27,9 @@ class FootwearsController < ApplicationController
     @footwear = Footwear.new(footwear_params)
     respond_to do |format|
       if @footwear.save
-        format.html { redirect_to @footwear, notice: 'Footwear was successfully created.' }
+        @footwear.create_sku()
+        @footwear.save
+        format.html { redirect_to @footwear, notice: 'Calzado creado correctamente.' }
         format.json { render :show, status: :created, location: @footwear }
       else
         format.html { render :new }
@@ -39,8 +41,11 @@ class FootwearsController < ApplicationController
   # PATCH/PUT /footwears/1
   # PATCH/PUT /footwears/1.json
   def update
+    
     respond_to do |format|
       if @footwear.update(footwear_params)
+        @footwear.create_sku()
+        @footwear.save
         format.html { redirect_to @footwear, notice: 'Footwear was successfully updated.' }
         format.json { render :show, status: :ok, location: @footwear }
       else

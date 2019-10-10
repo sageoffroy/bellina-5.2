@@ -30,6 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+
+
+
   activerecord:
     models:
       provider:  "Proveedor"
@@ -38,6 +41,7 @@ en:
       size:  "Talle"
       season:  "Temporada"
       footwear:  "Calzado"
+      way_pay:  "Forma de Pago"
        
         
     attributes:
@@ -75,6 +79,22 @@ en:
         release_country: "Pais de Origen"
         short_description: "Descripción Corta"
         long_description: "Descripción Larga"
+
+      way_pay:
+        name: "Nombre"
+        c1: "índice 1 cuota"
+        c2: "índice 2 cuota"
+        c3: "índice 3 cuota"
+        c4: "índice 4 cuota"
+        c5: "índice 5 cuota"
+        c6: "índice 6 cuota"
+        c7: "índice 7 cuota"
+        c8: "índice 8 cuota"
+        c9: "índice 9 cuota"
+        c10: "índice 10 cuota"
+        c11: "índice 11 cuota"
+        c12: "índice 12 cuota"
+
 
   date:
     abbr_day_names:
@@ -196,7 +216,7 @@ en:
       not_a_number: "%{attribute} no es un número"
       not_an_integer: "%{attribute} debe ser un entero"
       odd: "%{attribute} debe ser impar"
-      required: "%{attribute} es obligatorio"
+      required: "%{attribute} es un campo obligatorio"
       taken: "%{attribute} ya está en uso"
       too_long:
         one: "%{attribute} es demasiado largo (1 carácter máximo)"
@@ -249,6 +269,10 @@ en:
         create: Crear hs. Consultorio
         submit: Guardar hs. Consultorio
         update: Actualizar hs. Consultorio
+      way_pay:  
+        create: Crear forma de pago
+        submit: Guardar forma de pago
+        update: Actualizar forma de pago
 
   number:
     currency:

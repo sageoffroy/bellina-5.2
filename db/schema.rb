@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_26_143859) do
+ActiveRecord::Schema.define(version: 2019_09_30_154609) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -87,10 +87,41 @@ ActiveRecord::Schema.define(version: 2019_09_26_143859) do
 
   create_table "trademarks", force: :cascade do |t|
     t.string "name"
+    t.string "hex_code"
     t.integer "provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["provider_id"], name: "index_trademarks_on_provider_id"
+  end
+
+  create_table "way_pays", force: :cascade do |t|
+    t.string "name"
+    t.float "c1"
+    t.float "c2"
+    t.float "c3"
+    t.float "c4"
+    t.float "c5"
+    t.float "c6"
+    t.float "c7"
+    t.float "c8"
+    t.float "c9"
+    t.float "c10"
+    t.float "c11"
+    t.float "c12"
+    t.float "c13"
+    t.float "c14"
+    t.float "c15"
+    t.float "c16"
+    t.float "c17"
+    t.float "c18"
+    t.float "c19"
+    t.float "c20"
+    t.float "c21"
+    t.float "c22"
+    t.float "c23"
+    t.float "c24"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :way_pays
+  resources :categories
   resources :release_countries
   resources :sizes
-  resources :categories
   resources :seasons
   resources :colors
   resources :footwears

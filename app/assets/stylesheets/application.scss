@@ -326,6 +326,17 @@ input[type="text"] {
   @extend .form-control;
 }
 
+
+.active-true {
+  color:green;
+  font-weight: 600;
+}
+
+.active-false {
+  color:red;
+  font-weight: 600;
+}
+
 .input-icon {
   position: relative;
 }
@@ -2098,6 +2109,11 @@ pre code {
   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.form-simple-text {
+  margin-bottom: 0rem;
+  margin-top: 0.5rem; 
 }
 
 @media (prefers-reduced-motion: reduce) {

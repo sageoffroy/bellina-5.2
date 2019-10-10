@@ -1,0 +1,21 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/">Bellina</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="<%=way_pays_path%>">Formas de Pago</a>
+  </li>
+  <li class="breadcrumb-item active">Crear</li>
+</ol>
+
+<div class="container">
+  <div class="card card-register mx-auto mt-5">
+    <div class="card-header">Crear Forma de Pago</div>
+    <div class="card-body">
+      <%= render 'form', way_pay: @way_pay %>
+      <div class="text-center">
+      	<%= link_to 'Volver', way_pays_path, class: "d-block small mt-3" %>
+      </div>
+    </div>
+  </div>
+</div>

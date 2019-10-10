@@ -1,25 +1,14 @@
-<ol class="breadcrumb">
-  <li class="breadcrumb-item">
-    <a href="/">Tablero</a>
-  </li>
-  <li class="breadcrumb-item">
-    <a href="<%=providers_path%>">Categorías</a>
-  </li>
-  <li class="breadcrumb-item active"><%= @category.name %></li>
-</ol>
+<p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div class="card card-register mx-auto mt-5">
-    <div class="card-header"><%= @category.name %></div>
-    <div class="card-body">
-    	<p>
-		  <strong>Description:</strong>
-		  <%= @category.description%>
-		</p>
-	    <div class="text-center">
-    	  	<%= link_to 'Editar', edit_category_path(@category), class: "btn btn-primary" %>
-    	  	<%= link_to 'Volver', categories_path, class: "btn btn-primary" %>
-      	</div>
-    </div>
-  </div>
-</div>
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @category.code %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

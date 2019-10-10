@@ -8,13 +8,6 @@
   <% end %>
 
   <div class="field row">
-    <%= form.label :sku, :class => "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :sku, :disabled => true%>
-    </div>
-  </div>
-
-  <div class="field row">
     <%= form.label :trademark_id, :class => "col-sm-2 col-form-label" %>
     <div class="col-sm-10">
       <%= form.collection_select :trademark_id, Trademark.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2 select-field"} %>
@@ -95,7 +88,7 @@
 
   <div class="field">
     <%= form.check_box :active, :checked=> "checked" %>
-    <span style="font-style: italic;font-size: 0.8rem;"> Si el producto no se encuentra disponible para la venta, seleccione esta casilla</span>
+    <span style="font-style: italic;font-size: 0.8rem;"> Si el producto no se encuentra disponible para la venta, quite el tílde de esta casilla</span>
   </div>
 
   <div class="actions">
